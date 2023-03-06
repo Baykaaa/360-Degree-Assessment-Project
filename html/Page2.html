@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page2_team3</title>
+    <style>
+        .container{height:100vh;width:100%;display: flex;flex-direction: column;background-color: rgb(242, 242, 242);font-family:Sans-serif;}
+        .footer{display: flex; flex-direction: row;}
+        .navigationbar{
+            height:10%;width:100%;display: flex;flex-direction: row;
+            background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
+            font-family: 'Gill Sans'; color: white;
+        }
+        .logo{margin-right: 90px;}
+        .statsheader{
+            height:5%;width:100%;display: flex;flex-direction: column;
+            background-color: white;
+            color:rgb(58, 56, 56)
+        }
+        .displayad{
+            height:12%;width:100%;
+            display: flex; flex-direction: column;
+            background-color: red;
+        }
+        .maincontent{
+            height:80%;width:100%;display: flex;flex-direction: column;
+            background-color: rgb(237, 236, 236);
+            color: rgb(96, 96, 96);
+        }
+        .box1{
+            height:25%;width:90%;display: flex;flex-direction: row; background-color:white;color: rgb(96, 96, 96);
+            align-self: center;
+            margin-bottom: 20px; margin-top: 50px;
+        }
+        .button1{
+            border:none;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .section2{
+            height:33%;
+            width:90%;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            background-color:white;
+            color: rgb(96, 96, 96);
+            margin-bottom: 20px;
+            margin-top: 50px;
+        }
+        .box2{
+            height:70%;
+            width:90%;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            background-color:white;
+            color: rgb(96, 96, 96);
+            margin-bottom: 10px;
+        }
+        .footer1{
+            height:2.5%; width:100%;
+            display: flex; flex-direction: row; background-color:rgb(21, 20, 20);
+            color: rgb(200, 200, 200);
+            font-size:xx-small;
+
+        }
+        .footer2{
+            height:2.5%;
+            width:100%;
+            display: flex;
+            flex-direction: row;
+            background-color:rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+
+        }
+        .filterbtn{
+            padding: 2px; padding-right: 15px;
+            margin: 10px;
+            color: rgb(88, 88, 88);
+        }
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7b4747;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: rgb(46, 46, 46);
+  padding: 3px 4px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+        
+table, th, td {border:0.5px solid rgb(132, 132, 132);}
+        nav {
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 15px;
+  }
+
+
+#navbar {overflow: hidden;}
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+#navbar a:hover {color: white;}
+#navbar a.active {
+  background-color: #04AA6D;
+  color: rgb(223, 45, 45);
+}
+.content {padding: 16px;}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 55px;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="navigationbar" id="navbar">
+            <nav class="nav1">
+                    <a href=""> Profile </a>
+                    <a href="Page2.html"> Stats </a>
+                    <a href=""> Assessment [Chart] </a>
+                    <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
+                    <a>Sing in</a>
+            </nav>
+            <div class="logo">
+                <img src="file:///Users/admin/Downloads/Screenshot__3_-removebg-preview.png" width="80px" height="70px">
+            </div> 
+        </div>
+        <div class="statsheader">
+        </div>
+        <div class="displayad">
+            <img src="file:///Users/admin/Downloads/pexels-markus-spiske-3872166.jpg" width="100%" height="500%">
+        </div>
+        <div class="maincontent">
+            <div class="box1">
+                <div> 
+                    <button class="filterbtn">Filter by Team</button>
+                    <div class="dropdown-content">
+                        <a href="#">Ulun.mn</a>
+                        <a href="#">Teachify</a>
+                        <a href="#">360</a>
+                    </div>
+                </div>
+                <div>
+                    <button class="filterbtn">Please select indicator</button>
+                </div>
+                <div> <button class="filterbtn"> Advanced Filters </button>
+                </div>
+            </div>
+            <div class="box2">
+                <div class="sharebutton">
+                </div>
+                <div class="filterbutton2"> 
+                </div>
+                <div class="ttttt">
+                      
+                  
+                    <p> Points (1-10 хооронд)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onscroll = function() {myFunction()};
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+                if (window.pageYOffset >= sticky) 
+                {navbar.classList.add("sticky")
+                } else { navbar.classList.remove("sticky"); }}
+        
+        const data = [{team:'ulun.mn', member: 'tulga', design:'',scrum:'', system: '', communication: '', performance:''},
+                    {team:'ulun.mn', member: 'muuluu', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'ulun.mn', member: 'bujee', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'teachify', member: 'chingun', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'teachify', member: 'batzaya', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'teachify', member: 'baagii', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'teachify', member: 'uyanga', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'360', member: 'tsatsaa', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'360', member: 'budka', design:'',scrum: '', system: '', communication: '', performance:''},
+                    {team:'360', member: 'bayka', design:'',scrum: '', system: '', communication: '', performance:''}];
+        window.addEventListener("DOMContentLoaded",function(){
+            const myContent=document.querySelector('.ttttt');
+            const showrows=data.map((el,ind)=>{
+                return `
+                    <tr>
+                        <td>${el.team}</td>
+                        <td>${el.member}</td>
+                        <td><input value="${el.design}" type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                        <td>${el.scrum}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                        <td>${el.system}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                        <td>${el.communication}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                        <td>${el.performance}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+                    </tr>
+                ` })
+
+            const table = `
+                    <table class="ttttt">
+                        <tr>
+                          <th class="Team">Team</th>
+                          <th>Member</th>
+                          <th>Design</th>
+                          <th>Scrum</th>
+                          <th>System</th>
+                          <th>Communication</th>
+                          <th>Performance</th>
+                          <th>Overall total point</th>
+                        </tr>
+                        ${showrows}
+                    </table>
+            `    
+            myContent.innerHTML=table;
+        })
+    </script>
+</body>
+<footer class="border-neutral-800 border-t">
+    <div class="container pt-12 md:pt-20 md:pb-20">
+        <nav>
+            <ul class="grid grid-cols-2 gap-2 md:justify-between md:flex md:flex-wrap">
+                <li class=" md:w-auto mb-8 md:mb-0">
+                    <h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Products</h2>
+                <ul>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                            <a class="font-normal text-neutral-400 hover:text-white" href="/rapid">Scale Rapid</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                            <a class="font-normal text-neutral-400 hover:text-white" href="/studio">Scale Studio</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                <a class="font-normal text-neutral-400 hover:text-white" href="/3d-sensor-fusion">Scale 3D Sensor Fusion</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                <a class="font-normal text-neutral-400 hover:text-white" href="/image">Scale Image</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                    <a class="font-normal text-neutral-400 hover:text-white" href="/video">Scale Video</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                            <a class="font-normal text-neutral-400 hover:text-white" href="/text">Scale Text</a></li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                            <a class="font-normal text-neutral-400 hover:text-white" href="/audio-speech">Scale Audio</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                    <a class="font-normal text-neutral-400 hover:text-white" href="/nucleus">Scale Nucleus</a>
+                        </li>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                    <a class="font-normal text-neutral-400 hover:text-white" href="/mapping">Scale Mapping</a>
+                        </li>
+                </ul>
+                </li>
+                <li class=" md:w-auto mb-8 md:mb-0">
+                        <h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Solutions</h2>
+                <ul>
+                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                            <a class="font-normal text-neutral-400 hover:text-white" href="/retail">Retail &amp; eCommerce</a>
+                        </li>
+                            <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                <a class="font-normal text-neutral-400 hover:text-white" href="/defense">Defense</a>
+                            </li>
+                            <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                        <a class="font-normal text-neutral-400 hover:text-white" href="/logistics">Logistics</a></li>
+                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                        <a class="font-normal text-neutral-400 hover:text-white" href="/self-driving-cars">Autonomous Vehicles</a></li><li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                            <a class="font-normal text-neutral-400 hover:text-white" href="/robotics">Robotics</a></li>
+                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/ar-vr">AR/VR</a></li>
+                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                            <a class="font-normal text-neutral-400 hover:text-white" href="/content-language">Content &amp; Language</a></li>
+                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/rlhf">RLHF</a></li>
+                </ul>
+                                    </li>
+                                        <li class=" md:w-auto mb-8 md:mb-0"><h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Company</h2>
+            <ul>
+                                                <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/about">About</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/pricing">Pricing</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/careers">Careers</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                            <a class="font-normal text-neutral-400 hover:text-white" href="/security">Security</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/legal/terms">Legal</a></li>
+            </ul>
+                                    </li>
+                                    <li class=" md:w-auto mb-8 md:mb-0">
+                                        <h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Resources</h2>
+            <ul>
+                                                <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                    <a class="font-normal text-neutral-400 hover:text-white" href="/blog">Blog</a>
+                                                </li>
+                                                    <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                    <a class="font-normal text-neutral-400 hover:text-white" href="/customers">Customers</a>
+                                                </li>
+                                                    <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/events">Events</a>
+                                                    </li>
+                                                    <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                <a class="font-normal text-neutral-400 hover:text-white" href="/open-av-datasets">Open Datasets</a></li>
+                                                <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                    <a class="font-normal text-neutral-400 hover:text-white" href="/interviews">Interviews</a></li><li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                        <a class="font-normal text-neutral-400 hover:text-white" href="/docs">Documentation</a>
+                                                    </li>
+                                                    <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/guides">Guides</a></li>
+                                                <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                    <a class="font-normal text-neutral-400 hover:text-white" href="https://exchange.scale.com/">Community</a></li>
+                                                    <li class="flex mb-3 text-xs md:text-sm md:mb-3"><a class="font-normal text-neutral-400 hover:text-white" href="/ai-readiness-report">AI Readiness Report</a></li>
+            </ul>
+                                                </li>
+                                                    <li class=" md:w-auto mb-8 md:mb-0">
+                                                    <h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Guides</h2>
+            <ul>
+                    <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                        <a class="font-normal text-neutral-400 hover:text-white" href="https://scale.com/guides/data-labeling-annotation-guide">Data Labeling</a></li>
+                                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                            <a class="font-normal text-neutral-400 hover:text-white" href="https://scale.com/guides/model-training-building">ML Model Training</a></li>
+                                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                        <a class="font-normal text-neutral-400 hover:text-white" href="https://scale.com/guides/diffusion-models-guide">Diffusion Models</a></li>
+                                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                            <a class="font-normal text-neutral-400 hover:text-white" href="https://scale.com/guides/ai-for-ecommerce">Guide to AI for eCommerce</a></li>
+                                                        <li class="flex mb-3 text-xs md:text-sm md:mb-3">
+                                                            <a class="font-normal text-neutral-400 hover:text-white" href="https://scale.com/guides/computer-vision">Computer Vision Applications</a></li>
+            </ul>
+            </li>
+                <li class=" md:w-auto mb-8 md:mb-0">
+                                            <h2 class="text-neutral-400 text-xs sm:text-sm font-medium mb-4 md:mb-6 uppercase tracking-widest">Contact</h2>
+                <ul><li class="flex mb-3 text-sm"><a class="font-normal text-sm text-neutral-400 hover:text-white" href="/sales">sales@scale.com</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm">
+                                                <a href="mailto:support@scale.com" class="font-normal  text-neutral-400 hover:text-white">support@scale.com</a></li>
+                                            <li class="flex mb-3 text-xs md:text-sm">
+                                                <a href="mailto:careers@scale.com" class="font-normal  text-neutral-400 hover:text-white">careers@scale.com</a></li><li class="flex mb-3 text-xs md:text-sm"><a href="mailto:press@scale.com" class="font-normal  text-neutral-400 hover:text-white">press@scale.com</a></li>
+        <div class="flex gap-3 mt-8 text-neutral-400">
+            <a href="https://twitter.com/scale_ai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white"><path d="M7.55 21.75c9.055 0 14.008-7.503 14.008-14.008 0-.21-.004-.426-.014-.637A9.999 9.999 0 0024 4.555c-.898.4-1.85.66-2.826.774a4.95 4.95 0 002.165-2.723 9.897 9.897 0 01-3.126 1.195 4.93 4.93 0 00-8.394 4.49A13.985 13.985 0 011.673 3.15a4.93 4.93 0 001.523 6.57 4.93 4.93 0 01-2.23-.614v.061a4.922 4.922 0 003.95 4.828 4.894 4.894 0 01-2.221.085A4.934 4.934 0 007.292 17.5 9.875 9.875 0 010 19.54a13.969 13.969 0 007.55 2.211z"></path></svg></a><a href="https://www.facebook.com/scaleapi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white">
+                                                <path d="M24.147 12.073C24.147 5.405 18.74 0 12.073 0S0 5.405 0 12.073C0 18.1 4.415 23.094 10.187 24v-8.437H7.12v-3.49h3.066v-2.66c0-3.025 1.802-4.697 4.56-4.697 1.32 0 2.703.236 2.703.236v2.971h-1.523c-1.5 0-1.967.93-1.967 1.887v2.263h3.348l-.535 3.49H13.96V24c5.772-.906 10.187-5.9 10.187-11.927z"></path></svg></a><a href="https://www.linkedin.com/company/scaleai"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 duration-300 ease-in-out fill-current transition-color hover:text-white"><path d="M22.223 0H1.772C.792 0 0 .773 0 1.73v20.536C0 23.222.792 24 1.772 24h20.451c.98 0 1.777-.778 1.777-1.73V1.73C24 .773 23.203 0 22.223 0zM7.12 20.452H3.558V8.995H7.12v11.457zM5.34 7.434a2.064 2.064 0 110-4.125 2.063 2.063 0 010 4.125zm15.112 13.018h-3.558v-5.57c0-1.326-.024-3.037-1.852-3.037-1.851 0-2.133 1.449-2.133 2.944v5.663H9.356V8.995h3.413v1.566h.047c.473-.9 1.636-1.852 3.365-1.852 3.605 0 4.27 2.372 4.27 5.457v6.286z"></path></svg></a>
+        </div>
+            </ul></li>
+            </ul>
+        </nav>
+        <div class="flex text-xs md:text-sm  justify-between flex-col md:flex-row pt-6 md:mt-12 pb-12 border-neutral-800 border-t">
+            <span class="text-neutral-400">Copyright © <!-- -->2023<!-- --> Scale AI, Inc. All rights reserved.
+            </span>
+            <span class="mt-4 md:mt-0 text-neutral-400">
+                <a class="text-neutral-400 font-normal" href="/legal/terms">Terms of Use</a> 
+                    <!-- -->&amp;<!-- --> 
+                <a class="text-neutral-400 font-normal" href="/legal/privacy">Privacy Policy</a>
+            </span>
+        </div>
+    </div>
+
+</footer>
+</html>
