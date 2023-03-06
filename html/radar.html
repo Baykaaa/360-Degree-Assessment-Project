@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" type="image/x-icon" href="../html/images/Screenshot (3).png">
+  <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>360[Radar chart]</title>
+</head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .all {
+    width: 100%;
+    height: 100vh;
+    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
+    background-color: rgba(245, 245, 247, 255);
+  }
+
+  .header1 {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 20px;
+  }
+
+  .left {
+    width: 10%;
+    height: 30%;
+    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
+    background-color: white;
+    border-radius: 12%;
+    box-shadow: 10px 10px 5px lightblue;
+  }
+
+  .chart {
+    float: right;
+    width: 25%;
+  }
+
+  .title {
+    box-shadow: 10px 10px 5px lightblue;
+    text-align: center;
+    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
+    background-color: black;
+    border-radius: 12%;
+  }
+
+  .text {
+    font-size: 30px;
+    color: white;
+    padding-top: 20px;
+  }
+
+  .chart--container {
+    width: 80%;
+    height: 80%;
+    min-height: 300px;
+    flex-direction: row;
+  }
+
+  #myChart2-license-text {
+    display:none;
+
+  }
+
+  #myChart3-license-text {
+    display: none;
+  }
+
+  #myChart-license-text {
+    display: none;
+  }
+
+  .image {
+    font-size: 10px;
+    margin-left: 93%;
+  
+  }
+
+  .average {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: b;
+    width: 100%;
+    padding-top: 10%;
+    text-align: center;
+    font-size: 70%;
+  }
+
+  .navbar {
+    width: 100%;
+    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
+    background-color: white;
+    overflow: auto;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 10px;
+  }
+
+  .navbar a {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: rgba(110, 110, 115, 255);
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .navbar a:hover {
+    background-color: #e6e6e6;
+  }
+
+  .active {
+    background-color: #e6e6e6;
+    border-radius: 12px;
+  }
+
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+
+    }
+  }
+
+  .link {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15%;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    background-image: linear-gradient(to right, #cc99cc, #b0d8f2);
+    border-radius: 12%;
+  }
+  /* body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+} */
+</style>
+
+</head>
+
+<body>
+  <!-- <button onclick="myFunction()">Toggle dark mode</button> -->
+  <div class="all">
+    <div class="header1">
+      <div class="navbar">
+        <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#"><i class="fa fa-fw fa-search"></i> Stats </a>
+        <a class="active" href="#"><i class="fa fa-fw fa-chart-radar"></i>Chart</a>
+        <a href="#"><i class="fa fa-fw fa-user"></i> sign up</a>
+      </div>
+      <img src="../html/images/Screenshot__3_-removebg-preview.png" width="80px" height="80px">
+    </div>
+    <div class="container">
+      <div class="left">
+
+        <div class="average">
+          <h2>Ulun</h2>
+          <span>
+            <h2>100%</h2>
+          </span>
+        </div>
+        <div class="average">
+          <h2>Teachify</h2>
+          <span>
+            <h2>100%</h2>
+          </span>
+        </div>
+        <div class="average">
+          <h2>360</h2>
+          <span>
+            <h2>100%</h2>
+          </span>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="title">
+          <h3 class="text">Ulun.mn</h3>
+          <div id="myChart" class="chart--container"></div>
+        </div>
+      </div>
+      <div class="chart">
+
+        <div class="title">
+          <h3 class="text">Teachify</h3>
+          <div id="myChart2" class="chart--container"></div>
+        </div>
+      </div>
+      <div class="chart">
+        <div class="title">
+          <h3 class="text">360</h3>
+          <div id="myChart3" class="chart--container"></div>
+        </div>
+      </div>
+    </div>
+    <div class="link">
+      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
+      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
+      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
+    </div>
+    <!-- <table id="data-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>system</th>
+          <th>communication</th>
+          <th>design</th>
+          <th>scrum</th>
+          <th>performance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ulun.mn</td>
+          <td>5</td>
+          <td>3</td>
+          <td>7</td>
+          <td>2</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>teachifytd</td>
+          <td>2</td>
+          <td>6</td>
+          <td>4</td>
+          <td>8</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>360</td>
+          <td>4</td>
+          <td>2</td>
+          <td>6</td>
+          <td>3</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+    </table> -->
+  </div>
+
+  <script>
+//     const dataTable = document.getElementById('data-table');
+//     const labels = Array.from(dataTable.querySelectorAll('thead th')).slice(1).map(th => th.textContent);
+// const data = Array.from(dataTable.querySelectorAll('tbody tr')).map(tr => Array.from(tr.querySelectorAll('td')).slice(1).map(td => Number(td.textContent)));
+
+// const radarChart = new Chart(document.getElementById('radar-chart'), {
+//   type: 'radar',
+//   data: {
+//     labels: labels,
+//     datasets: data.map((dataset, index) => ({
+//       label: `Dataset ${index + 1}`,
+//       data: dataset,
+//       backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`,
+//       borderColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`,
+//       borderWidth: 1
+//     }))
+//   },
+    // function myFunction() {
+    //    var element = document.body;
+    //    element.classList.toggle("dark-mode");
+    // }
+    let chartConfig = {
+      type: 'radar',
+      backgroundColor: "none",
+      plot: {
+        backgroundColor: ' #e6e6e6',
+        aspect: 'area',
+        animation: {
+          effect: 3,
+          sequence: 1,
+          speed: 700,
+
+        },
+      },
+      scaleV: {
+        viasible: false,
+      },
+      scaleK: {
+        values: '0:4:1',
+        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+        guide: {
+          alpha: 0.3,
+          backgroundColor: '#FF0000 #FF0000',
+          lineColor: '#607D8B',
+          lineStyle: 'solid',
+      
+        },
+        item: {
+          fontColor: 'white',
+        },
+        refLine: {
+          lineColor: '#c10000',
+        },
+        tick: {
+          lineColor: '#59869c',
+          lineWidth: '1px',
+          lineStyle: 'dotted',
+          size: 25,
+        },
+      },
+      series: [{
+        values: [10, 10, 10, 1, 1],
+        text: 'farm',
+      },
+      ],
+    };
+    let chartConfig2 = {
+      type: 'radar',
+      backgroundColor: "none",
+
+      plot: {
+        backgroundColor: ' #e6e6e6',
+        aspect: 'area',
+        animation: {
+          effect: 3,
+          sequence: 1,
+          speed: 700,
+
+        },
+      },
+      scaleV: {
+        viasible: false,
+      },
+      scaleK: {
+        values: '0:4:1',
+        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+        guide: {
+          alpha: 0.3,
+          backgroundColor: '#FF0000 #FF0000',
+          lineColor: '#607D8B',
+          lineStyle: 'solid',
+        },
+        item: {
+          fontColor: 'white',
+        },
+        refLine: {
+          lineColor: '#c10000',
+        },
+        tick: {
+          lineColor: '#59869c',
+          lineWidth: '1px',
+          lineStyle: 'dotted',
+          size: 25,
+        },
+      },
+      series: [{
+        values: [6, 9, 10, 1, 5],
+        text: 'farm',
+      },
+      ],
+    };
+    let chartConfig3 = {
+      type: 'radar',
+      backgroundColor: "none",
+      plot: {
+        backgroundColor: ' #e6e6e6',
+        aspect: 'area',
+        animation: {
+          effect: 3,
+          sequence: 1,
+          speed: 700,
+
+        },
+      },
+      scaleV: {
+        viasible: false,
+      },
+      scaleK: {
+        values: '0:4:1',
+        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+        guide: {
+          alpha: 0.3,
+          backgroundColor: '#FF0000 #FF0000',
+          lineColor: '#607D8B',
+          lineStyle: 'solid',
+        },
+        item: {
+          fontColor: 'white',
+        },
+        refLine: {
+          lineColor: '#c10000',
+        },
+        tick: {
+          lineColor: '#59869c',
+          lineWidth: '1px',
+          lineStyle: 'dotted',
+          size: 25,
+        },
+      },
+      series: [{
+        values: [9, 7, 5, 3, 10],
+        text: 'farm',
+      },
+      ],
+
+    };
+
+    zingchart.render({
+      id: 'myChart',
+      data: chartConfig,
+      height: '100%',
+      width: '100%',
+
+    });
+    zingchart.render({
+      id: 'myChart2',
+      data: chartConfig2,
+      height: '100%',
+      width: '100%',
+      backgroundColor: '#666699',
+    });
+    zingchart.render({
+      id: 'myChart3',
+      data: chartConfig3,
+      height: '100%',
+      width: '100%',
+      backgroundColor: '#666699',
+    });
+  </script>
+
+</body>
+
+</html>
