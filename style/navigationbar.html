@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(242, 242, 242);
+            font-family: Sans-serif;
+        }
+        .navigationbar {
+            height: 10%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
+            font-family: 'Gill Sans';
+            color: white;
+        }
+        nav {
+            width: 120%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 15px;
+        }
+
+
+        #navbar {
+            overflow: hidden;
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover {
+            color: white;
+        }
+
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: rgb(223, 45, 45);
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigationbar" id="navbar">
+            <nav class="nav1">
+                <a href=""> Profile </a>
+                <a href="Page2.html"> Stats </a>
+                <a href=""> Assessment [Chart] </a>
+                <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
+                <a>Sing in</a>
+            </nav>
+        </div>
+    <script>
+        window.onscroll = function () { myFunction() };
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else { navbar.classList.remove("sticky"); }
+        }
+    </script>
+</body>
+</html>
