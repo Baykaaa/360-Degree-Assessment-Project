@@ -1,32 +1,39 @@
 .container11 {
-            height: 100vh;
+            height: 100%;
             width: 100%;
             display: flex;
             flex-direction: column;
-            background-color: rgb(242, 242, 242);
+            background-color: #6E6E73;
             font-family: Sans-serif;
-        }
+             }
 .navigationbar {
             height: 10%;
             width: 100%;
             display: flex;
             flex-direction: row;
-            /* background-image: linear-gradient(120deg, #cc99cc, #b0d8f2); */
-            background-color: white;
+            background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
             font-family: 'Gill Sans';
             color: white;
+            flex-direction:row ;
+            justify-content: space-between;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+        
+        }
+.logo {
+        margin-right: 90px;
         }
 nav {
-            width: 120%;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            padding-top: 15px;
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 15px;
+    }
+#navbar {overflow: hidden;
         }
-        #navbar {
-            overflow: hidden;
-        }
-        #navbar a {
+#navbar a {
             float: left;
             display: block;
             color: #6e6e73;
@@ -36,6 +43,9 @@ nav {
             font-size: 17px;
         }
         #navbar a:hover {
-            color: rgba(245, 245, 245, 0.582);
+            color: white;
         }
-      
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: rgb(223, 45, 45);
+        }
