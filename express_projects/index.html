@@ -201,47 +201,55 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
                 {navbar.classList.add("sticky")
                 } else { navbar.classList.remove("sticky"); }}
         
-        const data = [{team:'ulun.mn', member: 'tulga', design:2,scrum:5, system:5, communication:5, performance:8},
-                    {team:'ulun.mn', member: 'muuluu', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'ulun.mn', member: 'bujee', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'teachify', member: 'chingun', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'teachify', member: 'batzaya', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'teachify', member: 'baagii', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'teachify', member: 'uyanga', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'360', member: 'tsatsaa', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'360', member: 'budka', design:2,scrum: 8, system: 8, communication: 8, performance:8},
-                    {team:'360', member: 'bayka', design:2,scrum: 8, system: 8, communication: 8, performance:8}];
+        
         window.addEventListener("DOMContentLoaded",function(){
             const myContent=document.querySelector('.ttttt');
-            const showrows=data.map((el,ind)=>{
-                return `
-                    <tr>
-                        <td>${el.team}</td>
-                        <td>${el.member}</td>
-                        <td><input value="${el.design}" type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.scrum}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.system}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.communication}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.performance}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                    </tr>
-                ` })
 
-            const table = `
-                    <table class="ttttt">
-                        <tr>
-                          <th class="Team">Team</th>
-                          <th>Member</th>
-                          <th>Design</th>
-                          <th>Scrum</th>
-                          <th>System</th>
-                          <th>Communication</th>
-                          <th>Performance</th>
-                          <th>Overall total point</th>
-                        </tr>
-                        ${showrows}
-                    </table>
-            `    
-            myContent.innerHTML=table;
+            var requestOptions = {
+            method: 'GET',
+            mode:'no-cors'
+            };
+
+            fetch("http://localhost:8080/dataavah", requestOptions)
+            .then(response =>{
+                console.log('response',response)
+                return response.text()
+            })
+            .then(result => {
+                console.log('result',result)
+            //     const showrows=result.map((el,ind)=>{
+            //     return `
+            //         <tr>
+            //             <td>${el.team}</td>
+            //             <td>${el.member}</td>
+            //             <td><input value="${el.design}" type="number" id="quantity" name="quantity" min="1" max="10"></td>
+            //             <td>${el.scrum}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+            //             <td>${el.system}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+            //             <td>${el.communication}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+            //             <td>${el.performance}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
+            //         </tr>
+            //     ` })
+
+            // const table = `
+            //         <table class="ttttt">
+            //             <tr>
+            //               <th class="Team">Team</th>
+            //               <th>Member</th>
+            //               <th>Design</th>
+            //               <th>Scrum</th>
+            //               <th>System</th>
+            //               <th>Communication</th>
+            //               <th>Performance</th>
+            //               <th>Overall total point</th>
+            //             </tr>
+            //             ${showrows}
+            //         </table>
+            // `    
+            // myContent.innerHTML=table;
+            })
+            .catch(error => console.log('error', error));
+
+            
         })
     </script>
 </body>
