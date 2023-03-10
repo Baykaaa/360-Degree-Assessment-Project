@@ -5,7 +5,8 @@ const port = 8080
 
 app.get('/dataavah',(req,res)=>{
     res.send(
-      JSON.stringify([{team:'ulun.mn', member: 'tulga', design:2,scrum:5, system:5, communication:5, performance:8},
+      JSON.stringify (
+      [{team:'ulun.mn', member: 'tulga', design:2,scrum:5, system:5, communication:5, performance:8},
       {team:'ulun.mn', member: 'muuluu', design:2,scrum: 8, system: 8, communication: 8, performance:8},
       {team:'ulun.mn', member: 'bujee', design:2,scrum: 8, system: 8, communication: 8, performance:8},
       {team:'teachify', member: 'chingun', design:2,scrum: 8, system: 8, communication: 8, performance:8},
