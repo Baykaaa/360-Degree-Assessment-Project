@@ -3,10 +3,14 @@ const cors = require('cors');
 const app = express()
 const port = 8080
 
+app.use(cors())
 app.get('/dataavah',(req,res)=>{
     res.send(
       JSON.stringify (
-      [{team:'ulun.mn', member: 'tulga', design:2,scrum:5, system:5, communication:5, performance:8},
+      [{team:'ulun.mn', design:2,scrum:5, system:5, communication:5, performance:8},
+      {team:'teachify', design:2,scrum: 8, system: 8, communication: 8, performance:8},
+      {team:'360', design:2,scrum: 8, system: 8, communication: 8, performance:8},
+      {team:'ulun.mn', member: 'tulga', design:2,scrum:5, system:5, communication:5, performance:8},
       {team:'ulun.mn', member: 'muuluu', design:2,scrum: 8, system: 8, communication: 8, performance:8},
       {team:'ulun.mn', member: 'bujee', design:2,scrum: 8, system: 8, communication: 8, performance:8},
       {team:'teachify', member: 'chingun', design:2,scrum: 8, system: 8, communication: 8, performance:8},
@@ -20,7 +24,6 @@ app.get('/dataavah',(req,res)=>{
     );
 })
 
-app.use(cors({origin:'*',methods:'GET, POST, PUT, DELETE, OPTIONS'}))
 
 
 app.listen(port, () => {

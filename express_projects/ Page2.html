@@ -161,7 +161,7 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
         <div class="statsheader">
         </div>
         <div class="displayad">
-            <img src="file:///Users/admin/Downloads/pexels-markus-spiske-3872166.jpg" width="100%" height="500%">
+            <img src="https://learntocodewith.me/wp-content/uploads/2019/01/JavaScript.jpg" width="100%" height="500%">
         </div>
         <div class="maincontent">
             <div class="box1">
@@ -205,15 +205,15 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
         window.addEventListener("DOMContentLoaded",function(){
             const myContent=document.querySelector('.ttttt');
 
-            var requestOptions = {
-            method: 'GET',
-            mode:'no-cors'
-            };
+            // var requestOptions = {
+            // method: 'GET',
+            // mode:'no-cors'
+            // };
 
-            fetch("http://localhost:8080/dataavah", requestOptions)
+            fetch("http://localhost:8080/dataavah")
             .then(response =>{
                 console.log('response',response)
-                return response.text()
+                return response.json()
             })
             .then(result => {
                 console.log('result',result)
