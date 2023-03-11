@@ -5,147 +5,12 @@
   
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <link rel="stylesheet" href="../style/navigationbar.css">
+  <link rel="stylesheet" href="../style/radar.css">
+  <link rel="icon"  href="../images/favicon.png">
   <title>360[Radar chart]</title>
 </head>
 <style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  .all {
-    width: 100%;
-    height: 100vh;
-    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
-    background-color: rgba(245, 245, 247, 255);
-  }
-
-  /* .header1 {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-  } */
-
-  .container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 20px;
-  }
-
   
-
-  .chart {
-    float: right;
-    width: 25%;
-  }
-
-  .title {
-    box-shadow: 10px 10px 5px whitesmoke;
-    text-align: center;
-    /* background-image: linear-gradient(to right, #cc99cc, #b0d8f2); */
-    background-color: black;
-    border-radius: 12%;
-  }
-
-  .text {
-    font-size: 30px;
-    color: white;
-    padding-top: 20px;
-  }
-
-  .chart--container {
-    width: 100%;
-    height: 80%;
-    min-height: 300px;
-    flex-direction: row;
-  }
-
-  #myChart2-license-text {
-    display:none;
-
-  }
-
-  #myChart3-license-text {
-    display: none;
-  }
-
-  #myChart-license-text {
-    display: none;
-  }
-
-  /* .image {
-    font-size: 10px;
-    margin-left: 93%;
-  
-  } */
-/* .Ave{
-    width: 100%;
-    background-color: white;
-    border-radius: 12%;
-    box-shadow: 10px 10px 5px lightblue;
-}
-  .average {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: b;
-    width: 100%;
-    padding-top: 10%;
-    text-align: center;
-    font-size: 70%;
-  } */
-
-  /* .navbar {
-    width: 100%;
-    background-color: white;
-    overflow: auto;
-    display: flex;
-    justify-content: space-around;
-    padding-top: 10px;
-  }
-
-  .navbar a {
-    float: left;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    color: rgba(110, 110, 115, 255);
-    text-decoration: none;
-    font-size: 17px;
-  }
-
-  .navbar a:hover {
-    background-color: #e6e6e6;
-  }
-
-  .active {
-    background-color: #e6e6e6;
-    border-radius: 12px;
-  } */
-
-  @media screen and (max-width: 500px) {
-    .navbar a {
-      float: none;
-      display: block;
-
-    }
-  }
-
-  .link {
-    display: flex;
-    flex-direction: column;
-    padding-top: 15%;
-    align-items: center;
-    width: 100%;
-    height: 20%;
-    background-image: linear-gradient(to right, #cc99cc, #b0d8f2);
-    border-radius: 12%;
-  }
-
 </style>
 
 </head>
@@ -157,223 +22,209 @@
           <nav class="nav1">
               <a href="../index.html"> Profile </a>
               <a href="Page2.html"> Stats </a>
-              <a href="./radar.html"> Assessment [Chart] </a>
+              <a class="active" href="./radar.html"> Assessment [Chart] </a>
               <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
               <a href="./signup.html">Sign in</a>
           </nav>
-          <div class="logo">
-              <img src="file:///Users/admin/Downloads/Screenshot__3_-removebg-preview.png" width="80px" height="70px">
-          </div>
+          <button onclick="myFunction()">Toggle dark mode</button>
+          <!-- <div class="logo">
+              <img href="../images/logo.png" width="100%" height="100%">
+          </div> -->
+    </div>
     </div>
     <div class="container">
       <div class="chart">
         <div class="title">
-          <h3 class="text">Ulun.mn</h3>
+          <h3 class="text">Ulun.mn 100%</h3>
           <div id="myChart" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
 
         <div class="title">
-          <h3 class="text">Teachify</h3>
+          <h3 class="text">Teachify 100%</h3>
           <div id="myChart2" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
         <div class="title">
-          <h3 class="text">360</h3>
+          <h3 class="text">360 100%</h3>
           <div id="myChart3" class="chart--container"></div>
         </div>
       </div>
     </div>
-    <div class="link">
-      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
-      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
-      <a href="https://www.instagram.com/pe8_meme23/" target="_blank">Bit meme</a>
-    </div>
+  </div>
   <script>
-//     const dataTable = document.getElementById('data-table');
-//     const labels = Array.from(dataTable.querySelectorAll('thead th')).slice(1).map(th => th.textContent);
-// const data = Array.from(dataTable.querySelectorAll('tbody tr')).map(tr => Array.from(tr.querySelectorAll('td')).slice(1).map(td => Number(td.textContent)));
+    function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+   let data = localStorage.getItem("data");
+let convert = data.split(",")
+console.log('data', convert)
+let chartConfig = {
+  type: 'radar',
+  backgroundColor: "none",
+  plot: {
+    backgroundColor: ' #e6e6e6',
+    aspect: 'area',
+    animation: {
+      effect: 3,
+      sequence: 1,
+      speed: 700,
 
-// const radarChart = new Chart(document.getElementById('radar-chart'), {
-//   type: 'radar',
-//   data: {
-//     labels: labels,
-//     datasets: data.map((dataset, index) => ({
-//       label: `Dataset ${index + 1}`,
-//       data: dataset,
-//       backgroundColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 0.2)`,
-//       borderColor: `rgba(${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, 1)`,
-//       borderWidth: 1
-//     }))
-//   },
-    let data = localStorage.getItem("data");
-    let convert = data.split(",")
-    console.log('data', convert)
-    let chartConfig = {
-      type: 'radar',
-      backgroundColor: "none",
-      plot: {
-        backgroundColor: ' #e6e6e6',
-        aspect: 'area',
-        animation: {
-          effect: 3,
-          sequence: 1,
-          speed: 700,
+    },
+  },
+  scaleV: {
+    viasible: false,
+  },
+  scaleK: {
+    values: '0:4:1',
+    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+    guide: {
+      alpha: 0.3,
+      backgroundColor: '#FF0000 #FF0000',
+      lineColor: '#607D8B',
+      lineStyle: 'solid',
+  
+    },
+    item: {
+      fontColor: 'white',
+    },
+    refLine: {
+      lineColor: '#c10000',
+    },
+    tick: {
+      lineColor: '#59869c',
+      lineWidth: '1px',
+      lineStyle: 'dotted',
+      size: 25,
+    },
+  },
+  series: [{
+    values: convert,
+    text: 'farm',
+  },
+  ],
+};
+let data2 = localStorage.getItem("data");
+let convert2 = data.split(",")
+console.log('data', convert)
+let chartConfig2 = {
+  type: 'radar',
+  backgroundColor: "none",
 
-        },
-      },
-      scaleV: {
-        viasible: false,
-      },
-      scaleK: {
-        values: '0:4:1',
-        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-        guide: {
-          alpha: 0.3,
-          backgroundColor: '#FF0000 #FF0000',
-          lineColor: '#607D8B',
-          lineStyle: 'solid',
-      
-        },
-        item: {
-          fontColor: 'white',
-        },
-        refLine: {
-          lineColor: '#c10000',
-        },
-        tick: {
-          lineColor: '#59869c',
-          lineWidth: '1px',
-          lineStyle: 'dotted',
-          size: 25,
-        },
-      },
-      series: [{
-        values: convert,
-        text: 'farm',
-      },
-      ],
-    };
-    let data2 = localStorage.getItem("data");
-    let convert2 = data.split(",")
-    console.log('data', convert)
-    let chartConfig2 = {
-      type: 'radar',
-      backgroundColor: "none",
+  plot: {
+    backgroundColor: ' #e6e6e6',
+    aspect: 'area',
+    animation: {
+      effect: 3,
+      sequence: 1,
+      speed: 700,
 
-      plot: {
-        backgroundColor: ' #e6e6e6',
-        aspect: 'area',
-        animation: {
-          effect: 3,
-          sequence: 1,
-          speed: 700,
+    },
+  },
+  scaleV: {
+    viasible: false,
+  },
+  scaleK: {
+    values: '0:4:1',
+    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+    guide: {
+      alpha: 0.3,
+      backgroundColor: '#FF0000 #FF0000',
+      lineColor: '#607D8B',
+      lineStyle: 'solid',
+    },
+    item: {
+      fontColor: 'white',
+    },
+    refLine: {
+      lineColor: '#c10000',
+    },
+    tick: {
+      lineColor: '#59869c',
+      lineWidth: '1px',
+      lineStyle: 'dotted',
+      size: 25,
+    },
+  },
+  series: [{
+    values:convert,
+    text: 'farm',
+  },
+  ],
+};
+let data3 = localStorage.getItem("data");
+let convert3 = data.split(",")
+console.log('data', convert)
+let chartConfig3 = {
+  type: 'radar',
+  backgroundColor: "none",
+  plot: {
+    backgroundColor: 'red',
+    aspect: 'area',
+    animation: {
+      effect: 3,
+      sequence: 1,
+      speed: 700,
+    
+    },
+  },
+  scaleV: {
+    viasible: false,
+  },
+  scaleK: {
+    values: '0:4:1',
+    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
+    guide: {
+      alpha: 0.3,
+      backgroundColor: '#FF0000 #FF000',
+      lineColor: '#607D8B',
+      lineStyle: 'solid',
+    },
+    item: {
+      fontColor: 'white',
+    },
+    refLine: {
+      lineColor: '#c10000',
+    },
+    tick: {
+      lineColor: '#59869c',
+      lineWidth: '1px',
+      lineStyle: 'dotted',
+      size: 25,
+    },
+  },
+  series: [{
+    values: convert,
+    text: 'farm',
+  },
+  ],
 
-        },
-      },
-      scaleV: {
-        viasible: false,
-      },
-      scaleK: {
-        values: '0:4:1',
-        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-        guide: {
-          alpha: 0.3,
-          backgroundColor: '#FF0000 #FF0000',
-          lineColor: '#607D8B',
-          lineStyle: 'solid',
-        },
-        item: {
-          fontColor: 'white',
-        },
-        refLine: {
-          lineColor: '#c10000',
-        },
-        tick: {
-          lineColor: '#59869c',
-          lineWidth: '1px',
-          lineStyle: 'dotted',
-          size: 25,
-        },
-      },
-      series: [{
-        values:convert,
-        text: 'farm',
-      },
-      ],
-    };
-    let data3 = localStorage.getItem("data");
-    let convert3 = data.split(",")
-    console.log('data', convert)
-    let chartConfig3 = {
-      type: 'radar',
-      backgroundColor: "none",
-      plot: {
-        backgroundColor: 'red',
-        aspect: 'area',
-        animation: {
-          effect: 3,
-          sequence: 1,
-          speed: 700,
+};
 
-        },
-      },
-      scaleV: {
-        viasible: false,
-      },
-      scaleK: {
-        values: '0:4:1',
-        labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-        guide: {
-          alpha: 0.3,
-          backgroundColor: '#FF0000 #FF000',
-          lineColor: '#607D8B',
-          lineStyle: 'solid',
-        },
-        item: {
-          fontColor: 'white',
-        },
-        refLine: {
-          lineColor: '#c10000',
-        },
-        tick: {
-          lineColor: '#59869c',
-          lineWidth: '1px',
-          lineStyle: 'dotted',
-          size: 25,
-        },
-      },
-      series: [{
-        values: convert,
-        text: 'farm',
-      },
-      ],
-
-    };
-
-    zingchart.render({
-      id: 'myChart',
-      data: chartConfig,
-      height: '100%',
-      width: '100%',
-
-    });
-    zingchart.render({
-      id: 'myChart2',
-      data: chartConfig2,
-      height: '100%',
-      width: '100%',
-      backgroundColor: '#666699',
-    });
-    zingchart.render({
-      id: 'myChart3',
-      data: chartConfig3,
-      height: '100%',
-      width: '100%',
-      backgroundColor: '#666699',
-    });
+zingchart.render({
+  id: 'myChart',
+  data: chartConfig,
+  height: '100%',
+  width: '100%',
+  backgroundColor: '#666699',
+});
+zingchart.render({
+  id: 'myChart2',
+  data: chartConfig2,
+  height: '100%',
+  width: '100%',
+  backgroundColor: '#666699',
+});
+zingchart.render({
+  id: 'myChart3',
+  data: chartConfig3,
+  height: '100%',
+  width: '100%',
+  backgroundColor: '#666699',
+});
   </script>
 
 </body>

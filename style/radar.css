@@ -1,0 +1,82 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  /* .all {
+    width: 100%;
+    background-color: rgba(245, 245, 247, 255);
+  } */
+
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+  }
+body{
+  background-color: red;
+}
+  
+
+  .chart {
+    float: right;
+    width: 30%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    height: 100%;
+    /* transition: transform .2s; */
+  }
+  /* .chart:hover{
+    transform: scale(0.5);
+  } */
+
+  .title {
+    box-shadow: 10px 10px 5px whitesmoke;
+    text-align: center;
+    background-color: black;
+    border-radius: 12%;
+
+  }
+
+  .text {
+    font-size: 30px;
+    color: white;
+    padding-top: 20px;
+  }
+
+  .chart--container {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+
+  }
+
+  #myChart2-license-text {
+    display:none;
+
+  }
+
+  #myChart3-license-text {
+    display: none;
+  }
+
+  #myChart-license-text {
+    display: none;
+  }
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+
+    }
+  }
+
