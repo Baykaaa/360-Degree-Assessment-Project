@@ -1,51 +1,60 @@
 .container11 {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            background-color: #6E6E73;
-            font-family: Sans-serif;
-             }
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #6E6E73;
+    font-family: Sans-serif;
+}
+
 .navigationbar {
-            height: 10%;
-            width: 100%;
-            display: flex;
-            
-            background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
-            font-family: 'Gill Sans';
-            color: white;
-            flex-direction:row ;
-            justify-content: space-between;
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
-        
-        }
-.logo {
-        margin-right: 90px;
-        }
+    height: 10%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
+    font-family: 'Gill Sans';
+    color: white;
+    justify-content: space-between;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+
+}
+
+/* .logo {
+    margin-right: 90px;
+} */
+
 nav {
     width: 120%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-top: 15px;
-    }
-#navbar {overflow: hidden;
-        }
+    padding-bottom: 15px;
+}
+
+#navbar {
+    overflow: hidden;
+}
+
 #navbar a {
-            float: left;
-            display: block;
-            color: #f2f2f2;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-        }
+    float: left;
+    display: block;
+    color: #6e6e73;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
 #navbar a:hover {
-            color: white;
-        }
+    color: white;
+}
+
 #navbar a.active {
-            background-color: #04AA6D;
-            color: rgb(223, 45, 45);
-        }
+    background-color: #666666;
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
