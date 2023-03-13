@@ -9,7 +9,6 @@
     background-color: rgba(245, 245, 247, 255);
   } */
 
-
   .container {
     display: flex;
     flex-direction: row;
@@ -18,10 +17,6 @@
     width: 100%;
     height: 100%;
   }
-body{
-  background-color: red;
-}
-  
 
   .chart {
     float: right;
@@ -36,11 +31,10 @@ body{
   } */
 
   .title {
-    box-shadow: 10px 10px 5px whitesmoke;
+    box-shadow: 10px 10px 5px black;
     text-align: center;
     background-color: black;
     border-radius: 12%;
-
   }
 
   .text {
@@ -70,8 +64,15 @@ body{
   }
   .dark-mode {
     background-color: black;
-    color: white;
   }
+  .dark-mode .chartd {
+    background-color: white;
+  }
+  
+.darkbutton{
+  border-radius: 15px;
+  height: 10%;
+}
   @media screen and (max-width: 500px) {
     .navbar a {
       float: none;
