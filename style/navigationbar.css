@@ -54,7 +54,7 @@ nav {
 }
 
 #navbar a.active {
-    background-color: #04AA6D;
-    color: rgb(223, 45, 45);
+    background-color: #666666;
+    color: rgb(255, 255, 255);
     border-radius: 15px;
 }
