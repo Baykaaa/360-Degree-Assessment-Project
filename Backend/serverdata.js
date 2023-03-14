@@ -26,7 +26,7 @@ app.get('/tooniiniilber',(req,res)=>{
 });
 
 app.get('/dundaj02',(req,res)=>{
-  connection.query('SELECT Team, Member, Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessment',
+  connection.query('SELECT Team, Member, Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessmentbymember',
   (error,rows, fields)=>{
     res.send(rows)
     });
