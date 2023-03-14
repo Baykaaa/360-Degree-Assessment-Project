@@ -3,7 +3,7 @@ const path = require('path');
 const app = express()
 const port = 3000
 
-app.post('/hhh', (req, res) => {
+app.post('/hellworld', (req, res) => {
   res.send('Hello World!')
 })
 
