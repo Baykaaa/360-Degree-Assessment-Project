@@ -108,9 +108,9 @@
 
 .dropdown-content a:hover {background-color: #ddd;}
         
-table, th, td {border:0.5px solid rgb(132, 132, 132);}
+table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 240, 240);font-size: 10px;justify-self: center;}
         nav {
-    width: 120%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -221,7 +221,7 @@ fetch("http://localhost:8080/tooniiniilber", requestOptions)
                         <td>${el.Communication}</td>
                         <td>${el.Performance}</td>
                         <td>${el.Overall_Points} </td>
-                        </tr>
+                    </tr>
                 ` })
 
             const table = `
