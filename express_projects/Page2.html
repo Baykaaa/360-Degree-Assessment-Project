@@ -135,15 +135,12 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
     <div class="container"> 
         <div class="navigationbar" id="navbar">
             <nav class="nav1">
-                    <a href="../index.html"> Profile </a>
-                    <a class="active" href="./360-Degree-Assessment-Project/express_projects/Page2.html"> Stats </a>
-                    <a href="../pages/radar.html"> Assessment [Radar Chart] </a>
-                    <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
-                    <a href="./signup.html"> Sign up</a>
+                <a href="../index.html"> Profile </a>
+                <a class="active" href="./360-Degree-Assessment-Project/express_projects/Page2.html"> Stats </a>
+                <a href="../pages/radar.html"> Assessment [Radar Chart] </a>
+                <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
+                <a href="./signup.html"> Sign up</a>
             </nav>
-            <div class="logo">
-                <img src="file:///Users/admin/Downloads/Screenshot__3_-removebg-preview.png" width="80px" height="70px">
-            </div> 
         </div>
         <div class="statsheader">
         </div>
@@ -173,7 +170,6 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
                 </div>
                 <div class="ttttt">
                       
-                  
                     <p> Points (1-10 хооронд)</p>
                 </div>
             </div>
@@ -193,25 +189,25 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
             const myContent=document.querySelector('.ttttt');
 
             var myHeaders = new Headers();
-myHeaders.append("Accept", "application/json");
-myHeaders.append("Content-Type", "application/json");
+                myHeaders.append("Accept", "application/json");
+                myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({
-  "a": 6,
-  "b": 8
-});
+            var raw = JSON.stringify({
+                "a": 6,
+                "b": 8
+            });
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
 
-fetch("http://localhost:8080/tooniiniilber", requestOptions)
-  .then(response => response.json())
-  .then(result => {
-        const showrows=result.map((el,ind)=>{
+            fetch("http://localhost:8080/tooniiniilber", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                const showrows=result.map((el,ind)=>{
                 return `
                     <tr>
                         <td>${el.Team}</td>
@@ -220,14 +216,13 @@ fetch("http://localhost:8080/tooniiniilber", requestOptions)
                         <td>${el.System_}</td>
                         <td>${el.Communication}</td>
                         <td>${el.Performance}</td>
-                        <td>${el.Overall_Points} </td>
+                        <td>${(el.Team+el.Design+el.Scrum+el.System_+el.Performance)/5} </td>
                     </tr>
                 ` })
-
-            const table = `
+                const table = `
                     <table class="ttttt">
                         <tr>
-                          <th class="Team">Team</th>
+                          <th>Team</th>
                           <th>Design</th>
                           <th>Scrum</th>
                           <th>System_</th>
@@ -238,13 +233,10 @@ fetch("http://localhost:8080/tooniiniilber", requestOptions)
                         ${showrows}
                     </table>
             `    
-            myContent.innerHTML=table;
-  })
-  .catch(error => console.log('error', error));
-
-            
-            
+                myContent.innerHTML=table;
             })
+            .catch(error => console.log('error', error));
+        })
     </script>
 </body>
 </html>
