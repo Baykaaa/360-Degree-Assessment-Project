@@ -22,9 +22,7 @@
 
 }
 
-/* .logo {
-    margin-right: 90px;
-} */
+
 
 nav {
     width: 120%;
@@ -54,4 +52,5 @@ nav {
     background-color: #afafaf;
     color: rgb(255, 255, 255);
     border-radius: 10px;
+    padding-top: 10px;
 }
