@@ -5,7 +5,7 @@
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/navigationbar.css">
+    <link rel="stylesheet" href="./css/navigationbar.css">
     <link rel="icon"  href="../images/favicon.png">
     <title>360 Degree Assessment of Project </title>
     <style>
@@ -93,14 +93,18 @@ input[type=text]:focus, input[type=password]:focus {
 
 
 button {
-  
+  font-family: Sans-serif;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
- 
+  
+  
+  background-color: #b0d8f2;
   opacity: 0.9;
+  padding: 10px 10px 20px 10px;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+  width: 100px;
+  
 }
 
 button:hover {
@@ -115,8 +119,11 @@ button:hover {
 
 
 .cancelbtn, .signupbtn {
-  float: left;
-  width: 50%;
+  
+  width: 100px;
+  display:flex;
+  flex-direction: row;
+justify-content: space-evenly;
 }
 
 
@@ -133,6 +140,7 @@ button:hover {
   top: 0;
   width: 100%; 
   height: 100%; 
+  color: black;
   overflow: auto;
   background-color: #474e5d;
   padding-top: 50px;
@@ -201,7 +209,7 @@ background-color: plum;
       <div class="navigationbar" id="navbar">
         <nav class="nav1">
             <a class="active" href="../index.html"> Profile </a>
-            <a href="./express_projects/Page2.html"> Stats </a>
+            <a href="./Backend/Page2.html"> Stats </a>
             <a href="./pages/radar.html"> Assessment [Chart] </a>
             <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
            <button onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
@@ -220,14 +228,11 @@ background-color: plum;
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
 
-      <label for="psw-repeat"><b>Repeat Password</b></label>
-      <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-
-      <label>
+      
         <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
       </label>
 
-      <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
@@ -314,5 +319,24 @@ background-color: plum;
       modal.style.display = "none";
     }
   }
-  
+  window.addEventListener("DOMContentLoaded",function(){
+  const myContent=document.querySelector('.box');
+    window.addEventListener("DOMContentLoaded", function(){
+      fetch('http://localhost:3000/hi')
+        .then((res) => {
+            return res.json();
+        })
+        return `
+        <div class='box'>
+          
+          
+          <div class='text1'><h3>${el.Ner}-${el.Uureg}</h3></div>
+          
+          
+          </div>
+          `;
+       
+    }
+       
+      );})
   </script>
