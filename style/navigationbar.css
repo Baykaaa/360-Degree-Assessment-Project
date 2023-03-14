@@ -1,9 +1,9 @@
 .container11 {
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-color: #6E6E73;
+    background-color: rgb(237, 236, 236);
     font-family: Sans-serif;
 }
 
@@ -34,27 +34,24 @@ nav {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
-#navbar {
-    overflow: hidden;
-}
-
+#navbar {overflow: hidden;}
 #navbar a {
-    float: left;
-    display: block;
-    color: #6e6e73;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 12px 12px;
+  text-decoration: none;
+  font-size: 17px;
 }
+
 
 #navbar a:hover {
     color: white;
 }
 
 #navbar a.active {
-    background-color: #666666;
+    background-color: #afafaf;
     color: rgb(255, 255, 255);
-    border-radius: 15px;
+    border-radius: 10px;
 }

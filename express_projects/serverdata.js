@@ -58,21 +58,21 @@ app.post('/dataavah',(req,res)=>{
   res.send(students);
 });
 
-const connection =mysql.createConnection({
+const connection = mysql.createConnection({
   host: '54.169.69.87',
   user: 'rtd',
   password: 'Tiny722$',
   database: 'pe8db'
 });
+connection.connect()
 
 app.post('/tooniiniilber',(req,res)=>{
-connection.connect()
-connection.query('SELECT * FROM Users',
+
+connection.query('SELECT * FROM Assessment',
 (error,rows, fields)=>{
   console.log('The solution is:',rows[0])
   res.send(rows)
 });
-connection.end()
 });
 
 app.listen(port, () => {

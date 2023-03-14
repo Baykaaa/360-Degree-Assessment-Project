@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style/navigationbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page2_team3</title>
     <style>
@@ -22,7 +23,7 @@
         .displayad{
             height:12%;width:100%;
             display: flex; flex-direction: column;
-            background-color: red;
+            background-color: rgb(96, 96, 96);
         }
         .maincontent{
             height:80%;width:100%;display: flex;flex-direction: column;
@@ -107,9 +108,9 @@
 
 .dropdown-content a:hover {background-color: #ddd;}
         
-table, th, td {border:0.5px solid rgb(132, 132, 132);}
+table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 240, 240);font-size: 10px;justify-self: center;}
         nav {
-    width: 120%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -117,21 +118,7 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
   }
 
 
-#navbar {overflow: hidden;}
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-#navbar a:hover {color: white;}
-#navbar a.active {
-  background-color: #04AA6D;
-  color: rgb(223, 45, 45);
-}
+
 .content {padding: 16px;}
 .sticky {
   position: fixed;
@@ -148,9 +135,9 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
     <div class="container"> 
         <div class="navigationbar" id="navbar">
             <nav class="nav1">
-                    <a class="active" href="/index.html"> Profile </a>
-                    <a href="/360-Degree-Assessment-Project/express_projects/Page2"> Stats </a>
-                    <a href="/pages/radar.html"> Assessment [Radar Chart] </a>
+                    <a href="../index.html"> Profile </a>
+                    <a class="active" href="./360-Degree-Assessment-Project/express_projects/Page2.html"> Stats </a>
+                    <a href="../pages/radar.html"> Assessment [Radar Chart] </a>
                     <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
                     <a href="./signup.html"> Sign up</a>
             </nav>
@@ -205,52 +192,59 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);}
         window.addEventListener("DOMContentLoaded",function(){
             const myContent=document.querySelector('.ttttt');
 
-            // var requestOptions = {
-            // method: 'GET',
-            // mode:'no-cors'
-            // };
+            var myHeaders = new Headers();
+myHeaders.append("Accept", "application/json");
+myHeaders.append("Content-Type", "application/json");
 
-            fetch("http://localhost:8080/dataavah")
-            .then(response =>{
-                console.log('response',response)
-                return response.json()
-            })
-            .then(result => {
-                console.log('result',result)
-            //     const showrows=result.map((el,ind)=>{
-            //     return `
-            //         <tr>
-            //             <td>${el.team}</td>
-            //             <td>${el.member}</td>
-            //             <td><input value="${el.design}" type="number" id="quantity" name="quantity" min="1" max="10"></td>
-            //             <td>${el.scrum}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-            //             <td>${el.system}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-            //             <td>${el.communication}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-            //             <td>${el.performance}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-            //         </tr>
-            //     ` })
+var raw = JSON.stringify({
+  "a": 6,
+  "b": 8
+});
 
-            // const table = `
-            //         <table class="ttttt">
-            //             <tr>
-            //               <th class="Team">Team</th>
-            //               <th>Member</th>
-            //               <th>Design</th>
-            //               <th>Scrum</th>
-            //               <th>System</th>
-            //               <th>Communication</th>
-            //               <th>Performance</th>
-            //               <th>Overall total point</th>
-            //             </tr>
-            //             ${showrows}
-            //         </table>
-            // `    
-            // myContent.innerHTML=table;
-            })
-            .catch(error => console.log('error', error));
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:8080/tooniiniilber", requestOptions)
+  .then(response => response.json())
+  .then(result => {
+        const showrows=result.map((el,ind)=>{
+                return `
+                    <tr>
+                        <td>${el.Team}</td>
+                        <td>${el.Design}</td>
+                        <td>${el.Scrum}</td>
+                        <td>${el.System_}</td>
+                        <td>${el.Communication}</td>
+                        <td>${el.Performance}</td>
+                        <td>${el.Overall_Points} </td>
+                    </tr>
+                ` })
+
+            const table = `
+                    <table class="ttttt">
+                        <tr>
+                          <th class="Team">Team</th>
+                          <th>Design</th>
+                          <th>Scrum</th>
+                          <th>System_</th>
+                          <th>Communication</th>
+                          <th>Performance</th>
+                          <th>Overall_Points</th>
+                        </tr>
+                        ${showrows}
+                    </table>
+            `    
+            myContent.innerHTML=table;
+  })
+  .catch(error => console.log('error', error));
 
             
-        })
+            
+            })
     </script>
 </body>
 </html>
