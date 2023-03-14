@@ -19,6 +19,7 @@
     width: 100%;
     height: 90%;
   }
+<<<<<<< HEAD
 body{
   background-color:  rgb(237, 236, 236);
   width:100%;
@@ -26,6 +27,12 @@ body{
 }
   
 
+=======
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+>>>>>>> refs/remotes/origin/main
   .chart {
     float: right;
     width: 30%;
@@ -71,10 +78,7 @@ body{
   #myChart-license-text {
     display: none;
   }
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
+
   @media screen and (max-width: 500px) {
     .navbar a {
       float: none;
