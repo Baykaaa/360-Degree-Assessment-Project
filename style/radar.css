@@ -19,7 +19,6 @@
     width: 100%;
     height: 90%;
   }
-<<<<<<< HEAD
 body{
   background-color:  rgb(237, 236, 236);
   width:100%;
@@ -27,12 +26,10 @@ body{
 }
   
 
-=======
   .dark-mode {
     background-color: black;
     color: white;
   }
->>>>>>> refs/remotes/origin/main
   .chart {
     float: right;
     width: 30%;
