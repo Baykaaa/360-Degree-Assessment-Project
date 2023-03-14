@@ -215,12 +215,12 @@ fetch("http://localhost:8080/tooniiniilber", requestOptions)
                 return `
                     <tr>
                         <td>${el.Team}</td>
-                        <td><input value="${el.Design}" type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.Scrum}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.System*}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.Communication}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.Performance}<input type="number" id="quantity" name="quantity" min="1" max="10"></td>
-                        <td>${el.Overall Points}</td>
+                        <td>${el.Design}</td>
+                        <td>${el.Scrum}</td>
+                        <td>${el.System_}</td>
+                        <td>${el.Communication}</td>
+                        <td>${el.Performance}</td>
+                        <td>${el.Overall_Points} </td>
                         </tr>
                 ` })
 
@@ -230,10 +230,10 @@ fetch("http://localhost:8080/tooniiniilber", requestOptions)
                           <th class="Team">Team</th>
                           <th>Design</th>
                           <th>Scrum</th>
-                          <th>System*</th>
+                          <th>System_</th>
                           <th>Communication</th>
                           <th>Performance</th>
-                          <th>Overall Points</th>
+                          <th>Overall_Points</th>
                         </tr>
                         ${showrows}
                     </table>
