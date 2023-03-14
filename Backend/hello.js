@@ -1,5 +1,10 @@
 const express = require("express");
-
+const config{
+  host: '54.169.69.87',
+  user: 'rtd',
+  password: 'Tiny722$',
+  database: 'pe8db'
+}
 const app = express();
 const port = 3000;
 const bodyParser = require("body-parser");
