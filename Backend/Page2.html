@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="./style/navigationbar.css">
+    <link rel="stylesheet" href="/style/navigationbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page2_team3</title>
     <style>
@@ -59,7 +59,7 @@
             height:70%;
             width:90%;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-self: center;
             background-color:white;
             color: rgb(96, 96, 96);
@@ -172,6 +172,10 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
                       
                     <p> Points (1-10 хооронд)</p>
                 </div>
+                <div class="table02">
+                    <p> Points (1-10 хооронд)</p>
+
+                </div>
             </div>
         </div>
     </div>
@@ -192,15 +196,11 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
                 myHeaders.append("Accept", "application/json");
                 myHeaders.append("Content-Type", "application/json");
 
-            var raw = JSON.stringify({
-                "a": 6,
-                "b": 8
-            });
-
+            var raw = [{name:'tsatsaa' , email:'tsatsaa.chd@gmail.com'}]
             var requestOptions = {
             method: 'GET',
             headers: myHeaders,
-            body: raw,
+            // body: raw,
             redirect: 'follow'
             };
 
@@ -216,7 +216,7 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
                         <td>${el.System_}</td>
                         <td>${el.Communication}</td>
                         <td>${el.Performance}</td>
-                        <td>${(el.Team+el.Design+el.Scrum+el.System_+el.Performance)/5} </td>
+                        <td>${el.avgPoint}</td>
                     </tr>
                 ` })
                 const table = `
@@ -231,6 +231,58 @@ table, th, td {border:0.5px solid rgb(132, 132, 132);background-color: rgb(240, 
                           <th>Overall_Points</th>
                         </tr>
                         ${showrows}
+                    </table>
+            `    
+                myContent.innerHTML=table;
+            })
+            .catch(error => console.log('error', error));
+        })
+
+
+        window.addEventListener("DOMContentLoaded",function(){
+            const myContent=document.querySelector('.table02');
+
+            var myHeaders = new Headers();
+                myHeaders.append("Accept", "application/json");
+                myHeaders.append("Content-Type", "application/json");
+
+            var raw = [{name:'tsatsaa' , email:'tsatsaa.chd@gmail.com'}]
+            var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            // body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://localhost:8080/dundaj02", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                const showrows2=result.map((el,ind)=>{
+                return `
+                    <tr>
+                        <td>${el.Team}</td>
+                        <td>${el.Member}</td>
+                        <td>${el.Design}
+                        <td>${el.Scrum}</td>
+                        <td>${el.System_}</td>
+                        <td>${el.Communication}</td>
+                        <td>${el.Performance}</td>
+                        <td>${el.avgPoint}</td>
+                    </tr>
+                ` })
+                const table02 = `
+                    <table class="table02">
+                        <tr>
+                          <th>Team</th>
+                          <th>Member</th>
+                          <th>Design</th>
+                          <th>Scrum</th>
+                          <th>System_</th>
+                          <th>Communication</th>
+                          <th>Performance</th>
+                          <th>Overall_Points
+                        </tr>
+                        ${showrows2}
                     </table>
             `    
                 myContent.innerHTML=table;

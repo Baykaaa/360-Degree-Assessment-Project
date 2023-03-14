@@ -19,9 +19,15 @@ const connection = mysql.createConnection({
 connection.connect()
 
 app.get('/tooniiniilber',(req,res)=>{
-  connection.query('SELECT * FROM Assessment',
+  connection.query('SELECT Team, Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessment',
   (error,rows, fields)=>{
-    console.log('The solution is:',rows)
+    res.send(rows)
+    });
+});
+
+app.get('/dundaj02',(req,res)=>{
+  connection.query('SELECT Team, Member, Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessment',
+  (error,rows, fields)=>{
     res.send(rows)
     });
 });
