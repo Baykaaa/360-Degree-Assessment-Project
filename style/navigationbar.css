@@ -12,7 +12,8 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-image: linear-gradient(120deg, #cc99cc, #b0d8f2);
+    /* background-image: linear-gradient(120deg, #cc99cc, #b0d8f2); */
+    background-color: black;
     font-family: 'Gill Sans';
     color: white;
     justify-content: space-between;
