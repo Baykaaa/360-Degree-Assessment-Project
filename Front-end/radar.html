@@ -2,15 +2,15 @@
 <html>
 
 <head>
-  
+
   <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
   <link rel="stylesheet" href="../css/navigationbar.css">
   <link rel="stylesheet" href="../css/radar.css">
-  <link rel="icon"  href="../images/favicon.png">
+  <link rel="icon" href="../images/favicon.png">
   <title>360[Radar chart]</title>
 </head>
 <style>
-  
+
 </style>
 
 </head>
@@ -19,15 +19,15 @@
   <div class="all">
     <div>
       <div class="navigationbar" id="navbar">
-          <nav class="nav1">
-              <a href="../index.html"> Profile </a>
-              <a href="../Backend/Page2.html"> Stats </a>
-              <a class="active" href="./Front-end/radar.html"> Assessment [Chart] </a>
-              <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
-              <a href="./signup.html">Sign in</a>
-          </nav>
-          <button onclick="myFunction()">Toggle dark mode</button>
-          <!-- <div class="logo">
+        <nav class="nav1">
+          <a href="../index.html"> Profile </a>
+          <a href="../Backend/Page2.html"> Stats </a>
+          <a class="active" href="./Front-end/radar.html"> Assessment [Chart] </a>
+          <a href="https://www.facebook.com/bit.academy.official/"> Contact </a>
+          <a href="./signup.html">Sign in</a>
+        </nav>
+        <button onclick="myFunction()">Toggle dark mode</button>
+        <!-- <div class="logo">
               <img href="../images/logo.png" width="100%" height="100%">
           </div> -->
       </div>
@@ -35,21 +35,21 @@
     <div class="container" id="darkmode">
       <div class="chart">
         <div class="title">
-          <h3 class="text">Ulun.mn 100%</h3>
+          <h3 class="text">Ulun.mn </h3>
           <div id="myChart" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
 
         <div class="title">
-          <h3 class="text">Teachify 100%</h3>
-          <div id="myChart2" class="chart--container"></div>
+          <h3 class="text">Teachify </h3>
+          <div id="myChart1" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
         <div class="title">
-          <h3 class="text">360 100%</h3>
-          <div id="myChart3" class="chart--container"></div>
+          <h3 class="text">360 </h3>
+          <div id="myChart2" class="chart--container"></div>
         </div>
       </div>
     </div>
@@ -61,172 +61,214 @@
       console.log('element.classList', element.classList)
       element.classList.toggle("dark-mode");
     }
-   let data = localStorage.getItem("data");
-let convert = data.split(",")
-console.log('data', convert)
-let chartConfig = {
-  type: 'radar',
-  backgroundColor: "none",
-  plot: {
-    backgroundColor: ' #e6e6e6',
-    aspect: 'area',
-    animation: {
-      effect: 3,
-      sequence: 1,
-      speed: 700,
 
-    },
-  },
-  scaleV: {
-    viasible: false,
-  },
-  scaleK: {
-    values: '0:4:1',
-    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-    guide: {
-      alpha: 0.3,
-      backgroundColor: '#FF0000 #FF0000',
-      lineColor: '#607D8B',
-      lineStyle: 'solid',
-  
-    },
-    item: {
-      fontColor: 'white',
-    },
-    refLine: {
-      lineColor: '#c10000',
-    },
-    tick: {
-      lineColor: '#59869c',
-      lineWidth: '1px',
-      lineStyle: 'dotted',
-      size: 25,
-    },
-  },
-  series: [{
-    values: convert,
-    text: 'farm',
-  },
-  ],
-};
-let data2 = localStorage.getItem("data");
-let convert2 = data.split(",")
-console.log('data', convert)
-let chartConfig2 = {
-  type: 'radar',
-  backgroundColor: "none",
 
-  plot: {
-    backgroundColor: ' #e6e6e6',
-    aspect: 'area',
-    animation: {
-      effect: 3,
-      sequence: 1,
-      speed: 700,
+    const fetchUrl = "http://localhost:8080/tooniiniilber";
+    window.addEventListener("DOMContentLoaded", function () {
+      let chartData = []
+      getapi(fetchUrl);
+      function getapi(url) {
+        var requestOptions = {
+          method: 'GET',
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          redirect: 'follow'
+        };
+        // Storing response
+        console.log('requestOptions', requestOptions)
+        fetch(url, requestOptions)
+          .then(response => response.json())
+          .then(result => {
+            console.log("data", result)
+            let values = []
+            let data = []
 
-    },
-  },
-  scaleV: {
-    viasible: false,
-  },
-  scaleK: {
-    values: '0:4:1',
-    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-    guide: {
-      alpha: 0.3,
-      backgroundColor: '#FF0000 #FF0000',
-      lineColor: '#607D8B',
-      lineStyle: 'solid',
-    },
-    item: {
-      fontColor: 'white',
-    },
-    refLine: {
-      lineColor: '#c10000',
-    },
-    tick: {
-      lineColor: '#59869c',
-      lineWidth: '1px',
-      lineStyle: 'dotted',
-      size: 25,
-    },
-  },
-  series: [{
-    values:convert,
-    text: 'farm',
-  },
-  ],
-};
-let data3 = localStorage.getItem("data");
-let convert3 = data.split(",")
-console.log('data', convert)
-let chartConfig3 = {
-  type: 'radar',
-  backgroundColor: "none",
-  plot: {
-    backgroundColor: 'red',
-    aspect: 'area',
-    animation: {
-      effect: 3,
-      sequence: 1,
-      speed: 700,
-    
-    },
-  },
-  scaleV: {
-    viasible: false,
-  },
-  scaleK: {
-    values: '0:4:1',
-    labels: ['Design', 'System', 'Performance', 'Communication', 'Scrum'],
-    guide: {
-      alpha: 0.3,
-      backgroundColor: '#FF0000 #FF000',
-      lineColor: '#607D8B',
-      lineStyle: 'solid',
-    },
-    item: {
-      fontColor: 'white',
-    },
-    refLine: {
-      lineColor: '#c10000',
-    },
-    tick: {
-      lineColor: '#59869c',
-      lineWidth: '1px',
-      lineStyle: 'dotted',
-      size: 25,
-    },
-  },
-  series: [{
-    values: convert,
-    text: 'farm',
-  },
-  ],
+            result.forEach((item, key) => {
+              // console.log('map run', values.push(item[key]  ))
+              // const filter = Object.keys(item)
+              data.push(Object.values(item))
+              values.push(Object.keys(item))
+            })
+            console.log("values", values)
+            console.log('data', data)
 
-};
+            let chartConfig = {
+              type: 'radar',
+              backgroundColor: "none",
+              plot: {
+                backgroundColor: ' #e6e6e6',
+                aspect: 'area',
+                animation: {
+                  effect: 3,
+                  sequence: 1,
+                  speed: 700,
 
-zingchart.render({
-  id: 'myChart',
-  data: chartConfig,
-  height: '100%',
-  width: '100%',
-  backgroundColor: '#666699',
-});
-zingchart.render({
-  id: 'myChart2',
-  data: chartConfig2,
-  height: '100%',
-  width: '100%',
-  backgroundColor: '#666699',
-});
-zingchart.render({
-  id: 'myChart3',
-  data: chartConfig3,
-  height: '100%',
-  width: '100%',
-  backgroundColor: '#666699',
-});
+                },
+              },
+              scaleV: {
+                viasible: false,
+              },
+              scaleK: {
+                values: '0:4:1',
+                labels: values[0],
+                guide: {
+                  alpha: 0.3,
+                  backgroundColor: '#FF0000 #FF0000',
+                  lineColor: '#607D8B',
+                  lineStyle: 'solid',
+
+                },
+                item: {
+                  fontColor: 'white',
+                },
+                refLine: {
+                  lineColor: '#c10000',
+                },
+                tick: {
+                  lineColor: '#59869c',
+                  lineWidth: '1px',
+                  lineStyle: 'dotted',
+                  size: 25,
+                },
+              },
+              series: [{
+                //point
+                values: data[0],
+                text: 'farm',
+              },
+              ],
+            };
+            let chartConfig1 = {
+              type: 'radar',
+              backgroundColor: "none",
+              plot: {
+                backgroundColor: ' #e6e6e6',
+                aspect: 'area',
+                animation: {
+                  effect: 3,
+                  sequence: 1,
+                  speed: 700,
+
+                },
+              },
+              scaleV: {
+                viasible: false,
+              },
+              scaleK: {
+                values: '0:4:1',
+                labels: values[1],
+                guide: {
+                  alpha: 0.3,
+                  backgroundColor: '#FF0000 #FF0000',
+                  lineColor: '#607D8B',
+                  lineStyle: 'solid',
+
+                },
+                item: {
+                  fontColor: 'white',
+                },
+                refLine: {
+                  lineColor: '#c10000',
+                },
+                tick: {
+                  lineColor: '#59869c',
+                  lineWidth: '1px',
+                  lineStyle: 'dotted',
+                  size: 25,
+                },
+              },
+              series: [{
+                //point
+                values: data[1],
+                text: 'farm',
+              },
+              ],
+            };
+            let chartConfig2 = {
+              type: 'radar',
+              backgroundColor: "none",
+              plot: {
+                backgroundColor: ' #e6e6e6',
+                aspect: 'area',
+                animation: {
+                  effect: 3,
+                  sequence: 1,
+                  speed: 700,
+
+                },
+              },
+              scaleV: {
+                viasible: false,
+              },
+              scaleK: {
+                values: '0:4:1',
+                labels: values[2],
+                guide: {
+                  alpha: 0.3,
+                  backgroundColor: '#FF0000 #FF0000',
+                  lineColor: '#607D8B',
+                  lineStyle: 'solid',
+
+                },
+                item: {
+                  fontColor: 'white',
+                },
+                refLine: {
+                  lineColor: '#c10000',
+                },
+                tick: {
+                  lineColor: '#59869c',
+                  lineWidth: '1px',
+                  lineStyle: 'dotted',
+                  size: 25,
+                },
+              },
+              series: [{
+                //point
+                values: data[2],
+                text: 'farm',
+              },
+              ],
+            };
+
+
+            zingchart.render({
+              id: 'myChart',
+              data: chartConfig,
+              height: '100%',
+              width: '100%',
+              backgroundColor: '#666699',
+            });
+            zingchart.render({
+              id: 'myChart1',
+              data: chartConfig1,
+              height: '100%',
+              width: '100%',
+              backgroundColor: '#666699',
+            });
+            zingchart.render({
+              id: 'myChart2',
+              data: chartConfig2,
+              height: '100%',
+              width: '100%',
+              backgroundColor: '#666699',
+            });
+          })
+
+          .catch(error => console.log('error', error))      // Storing data in form of JSON
+        // if (response) {
+        //   hideloader();
+        // }
+        // show(data);
+      }
+
+    })
+
+
+
+
   </script>
 
 </body>
