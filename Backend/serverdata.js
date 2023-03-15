@@ -19,7 +19,7 @@ const connection = mysql.createConnection({
 connection.connect()
 
 app.get('/tooniiniilber',(req,res)=>{
-  connection.query('SELECT Team, Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessment',
+  connection.query('SELECT Scrum, System_, Design, Communication, Performance,( Scrum+ System_+ Design+ Communication+Performance)/5 as avgPoint FROM Assessment',
   (error,rows, fields)=>{
     res.send(rows)
     });
