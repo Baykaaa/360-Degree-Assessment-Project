@@ -35,20 +35,20 @@
     <div class="container" id="darkmode">
       <div class="chart">
         <div class="title">
-          <h3 class="text">Ulun.mn 100%</h3>
+          <h3 class="text">Ulun.mn </h3>
           <div id="myChart" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
 
         <div class="title">
-          <h3 class="text">Teachify 100%</h3>
+          <h3 class="text">Teachify </h3>
           <div id="myChart1" class="chart--container"></div>
         </div>
       </div>
       <div class="chart">
         <div class="title">
-          <h3 class="text">360 100%</h3>
+          <h3 class="text">360 </h3>
           <div id="myChart2" class="chart--container"></div>
         </div>
       </div>
@@ -61,9 +61,7 @@
       console.log('element.classList', element.classList)
       element.classList.toggle("dark-mode");
     }
-    //     //func
-    //    let data = localStorage.getItem("data");
-    // let convert = data.split(",")
+
 
     const fetchUrl = "http://localhost:8080/tooniiniilber";
     window.addEventListener("DOMContentLoaded", function () {
@@ -86,7 +84,6 @@
             console.log("data", result)
             let values = []
             let data = []
-
 
             result.forEach((item, key) => {
               // console.log('map run', values.push(item[key]  ))
